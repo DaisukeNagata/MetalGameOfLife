@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBABD5AA1F6E835B00707A06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABD5A91F6E835B00707A06 /* AppDelegate.swift */; };
+		BBABD5AC1F6E835B00707A06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABD5AB1F6E835B00707A06 /* ViewController.swift */; };
+		BBABD5AF1F6E835B00707A06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBABD5AD1F6E835B00707A06 /* Main.storyboard */; };
+		BBABD5B11F6E835B00707A06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBABD5B01F6E835B00707A06 /* Assets.xcassets */; };
+		BBABD5B41F6E835B00707A06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBABD5B21F6E835B00707A06 /* LaunchScreen.storyboard */; };
+		BBABD5BF1F6E835B00707A06 /* MetalGameOfLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABD5BE1F6E835B00707A06 /* MetalGameOfLifeTests.swift */; };
+		BBABD5CA1F6E835B00707A06 /* MetalGameOfLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABD5C91F6E835B00707A06 /* MetalGameOfLifeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBABD5BB1F6E835B00707A06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBABD59E1F6E835B00707A06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBABD5A51F6E835B00707A06;
+			remoteInfo = MetalGameOfLife;
+		};
+		BBABD5C61F6E835B00707A06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBABD59E1F6E835B00707A06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBABD5A51F6E835B00707A06;
+			remoteInfo = MetalGameOfLife;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBABD5A61F6E835B00707A06 /* MetalGameOfLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalGameOfLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBABD5A91F6E835B00707A06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBABD5AB1F6E835B00707A06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBABD5AE1F6E835B00707A06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBABD5B01F6E835B00707A06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBABD5B31F6E835B00707A06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBABD5B51F6E835B00707A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBABD5BA1F6E835B00707A06 /* MetalGameOfLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalGameOfLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBABD5BE1F6E835B00707A06 /* MetalGameOfLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalGameOfLifeTests.swift; sourceTree = "<group>"; };
+		BBABD5C01F6E835B00707A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBABD5C51F6E835B00707A06 /* MetalGameOfLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalGameOfLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBABD5C91F6E835B00707A06 /* MetalGameOfLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalGameOfLifeUITests.swift; sourceTree = "<group>"; };
+		BBABD5CB1F6E835B00707A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBABD5A31F6E835B00707A06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBABD5B71F6E835B00707A06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBABD5C21F6E835B00707A06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBABD59D1F6E835B00707A06 = {
+			isa = PBXGroup;
+			children = (
+				BBABD5A81F6E835B00707A06 /* MetalGameOfLife */,
+				BBABD5BD1F6E835B00707A06 /* MetalGameOfLifeTests */,
+				BBABD5C81F6E835B00707A06 /* MetalGameOfLifeUITests */,
+				BBABD5A71F6E835B00707A06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBABD5A71F6E835B00707A06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBABD5A61F6E835B00707A06 /* MetalGameOfLife.app */,
+				BBABD5BA1F6E835B00707A06 /* MetalGameOfLifeTests.xctest */,
+				BBABD5C51F6E835B00707A06 /* MetalGameOfLifeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBABD5A81F6E835B00707A06 /* MetalGameOfLife */ = {
+			isa = PBXGroup;
+			children = (
+				BBABD5A91F6E835B00707A06 /* AppDelegate.swift */,
+				BBABD5AB1F6E835B00707A06 /* ViewController.swift */,
+				BBABD5AD1F6E835B00707A06 /* Main.storyboard */,
+				BBABD5B01F6E835B00707A06 /* Assets.xcassets */,
+				BBABD5B21F6E835B00707A06 /* LaunchScreen.storyboard */,
+				BBABD5B51F6E835B00707A06 /* Info.plist */,
+			);
+			path = MetalGameOfLife;
+			sourceTree = "<group>";
+		};
+		BBABD5BD1F6E835B00707A06 /* MetalGameOfLifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBABD5BE1F6E835B00707A06 /* MetalGameOfLifeTests.swift */,
+				BBABD5C01F6E835B00707A06 /* Info.plist */,
+			);
+			path = MetalGameOfLifeTests;
+			sourceTree = "<group>";
+		};
+		BBABD5C81F6E835B00707A06 /* MetalGameOfLifeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BBABD5C91F6E835B00707A06 /* MetalGameOfLifeUITests.swift */,
+				BBABD5CB1F6E835B00707A06 /* Info.plist */,
+			);
+			path = MetalGameOfLifeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBABD5A51F6E835B00707A06 /* MetalGameOfLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBABD5CE1F6E835B00707A06 /* Build configuration list for PBXNativeTarget "MetalGameOfLife" */;
+			buildPhases = (
+				BBABD5A21F6E835B00707A06 /* Sources */,
+				BBABD5A31F6E835B00707A06 /* Frameworks */,
+				BBABD5A41F6E835B00707A06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalGameOfLife;
+			productName = MetalGameOfLife;
+			productReference = BBABD5A61F6E835B00707A06 /* MetalGameOfLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBABD5B91F6E835B00707A06 /* MetalGameOfLifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBABD5D11F6E835B00707A06 /* Build configuration list for PBXNativeTarget "MetalGameOfLifeTests" */;
+			buildPhases = (
+				BBABD5B61F6E835B00707A06 /* Sources */,
+				BBABD5B71F6E835B00707A06 /* Frameworks */,
+				BBABD5B81F6E835B00707A06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBABD5BC1F6E835B00707A06 /* PBXTargetDependency */,
+			);
+			name = MetalGameOfLifeTests;
+			productName = MetalGameOfLifeTests;
+			productReference = BBABD5BA1F6E835B00707A06 /* MetalGameOfLifeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BBABD5C41F6E835B00707A06 /* MetalGameOfLifeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBABD5D41F6E835B00707A06 /* Build configuration list for PBXNativeTarget "MetalGameOfLifeUITests" */;
+			buildPhases = (
+				BBABD5C11F6E835B00707A06 /* Sources */,
+				BBABD5C21F6E835B00707A06 /* Frameworks */,
+				BBABD5C31F6E835B00707A06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBABD5C71F6E835B00707A06 /* PBXTargetDependency */,
+			);
+			name = MetalGameOfLifeUITests;
+			productName = MetalGameOfLifeUITests;
+			productReference = BBABD5C51F6E835B00707A06 /* MetalGameOfLifeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBABD59E1F6E835B00707A06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = nagatadaisuke;
+				TargetAttributes = {
+					BBABD5A51F6E835B00707A06 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					BBABD5B91F6E835B00707A06 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BBABD5A51F6E835B00707A06;
+					};
+					BBABD5C41F6E835B00707A06 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BBABD5A51F6E835B00707A06;
+					};
+				};
+			};
+			buildConfigurationList = BBABD5A11F6E835B00707A06 /* Build configuration list for PBXProject "MetalGameOfLife" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBABD59D1F6E835B00707A06;
+			productRefGroup = BBABD5A71F6E835B00707A06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBABD5A51F6E835B00707A06 /* MetalGameOfLife */,
+				BBABD5B91F6E835B00707A06 /* MetalGameOfLifeTests */,
+				BBABD5C41F6E835B00707A06 /* MetalGameOfLifeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBABD5A41F6E835B00707A06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBABD5B41F6E835B00707A06 /* LaunchScreen.storyboard in Resources */,
+				BBABD5B11F6E835B00707A06 /* Assets.xcassets in Resources */,
+				BBABD5AF1F6E835B00707A06 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBABD5B81F6E835B00707A06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBABD5C31F6E835B00707A06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBABD5A21F6E835B00707A06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBABD5AC1F6E835B00707A06 /* ViewController.swift in Sources */,
+				BBABD5AA1F6E835B00707A06 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBABD5B61F6E835B00707A06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBABD5BF1F6E835B00707A06 /* MetalGameOfLifeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBABD5C11F6E835B00707A06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBABD5CA1F6E835B00707A06 /* MetalGameOfLifeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBABD5BC1F6E835B00707A06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBABD5A51F6E835B00707A06 /* MetalGameOfLife */;
+			targetProxy = BBABD5BB1F6E835B00707A06 /* PBXContainerItemProxy */;
+		};
+		BBABD5C71F6E835B00707A06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBABD5A51F6E835B00707A06 /* MetalGameOfLife */;
+			targetProxy = BBABD5C61F6E835B00707A06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBABD5AD1F6E835B00707A06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBABD5AE1F6E835B00707A06 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BBABD5B21F6E835B00707A06 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBABD5B31F6E835B00707A06 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBABD5CC1F6E835B00707A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BBABD5CD1F6E835B00707A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBABD5CF1F6E835B00707A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalGameOfLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalGameOfLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBABD5D01F6E835B00707A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalGameOfLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalGameOfLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BBABD5D21F6E835B00707A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalGameOfLifeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalGameOfLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetalGameOfLife.app/MetalGameOfLife";
+			};
+			name = Debug;
+		};
+		BBABD5D31F6E835B00707A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalGameOfLifeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalGameOfLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetalGameOfLife.app/MetalGameOfLife";
+			};
+			name = Release;
+		};
+		BBABD5D51F6E835B00707A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalGameOfLifeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalGameOfLifeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MetalGameOfLife;
+			};
+			name = Debug;
+		};
+		BBABD5D61F6E835B00707A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				INFOPLIST_FILE = MetalGameOfLifeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dbank.MetalGameOfLifeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MetalGameOfLife;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBABD5A11F6E835B00707A06 /* Build configuration list for PBXProject "MetalGameOfLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBABD5CC1F6E835B00707A06 /* Debug */,
+				BBABD5CD1F6E835B00707A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBABD5CE1F6E835B00707A06 /* Build configuration list for PBXNativeTarget "MetalGameOfLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBABD5CF1F6E835B00707A06 /* Debug */,
+				BBABD5D01F6E835B00707A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBABD5D11F6E835B00707A06 /* Build configuration list for PBXNativeTarget "MetalGameOfLifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBABD5D21F6E835B00707A06 /* Debug */,
+				BBABD5D31F6E835B00707A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBABD5D41F6E835B00707A06 /* Build configuration list for PBXNativeTarget "MetalGameOfLifeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBABD5D51F6E835B00707A06 /* Debug */,
+				BBABD5D61F6E835B00707A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBABD59E1F6E835B00707A06 /* Project object */;
+}
