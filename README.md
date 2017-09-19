@@ -4,4 +4,4 @@
 
 ### Tap->Animation
 
-![](https://github.com/daisukenagata/MetalGameOfLife/blob/master/Gif/Movie.gif?raw=true)
+![](https://github.com/daisukenagata/MetalGameOfLife/blob/master/Gif/Metal.gif?raw=true)
