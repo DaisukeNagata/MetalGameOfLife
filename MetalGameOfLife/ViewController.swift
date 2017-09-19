@@ -12,31 +12,31 @@ import MetalKit
 class ViewController: UIViewController {
     
     @IBOutlet var metalView: MTKView!
+    var slider = UISlider()
     var aAPLRenderer = AAPLRenderer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.aAPLRenderer.screenAnimation = 11
-        
-        self.setupView()
-        
-        self.metalView.isUserInteractionEnabled = true
-        
-        self.becomeFirstResponder()
-        
+
         self.swipeMethod()
+        self.view.addSubview(slider)
+        slider.frame = CGRect(x:0,y:UIScreen.main.bounds.height-100,width:UIScreen.main.bounds.width,height:44)
+        slider.minimumValue = 4
+        slider.maximumValue = 11
+        slider.addTarget(self, action: #selector(sliderHorizon(_:)), for: UIControlEvents.touchUpInside)
+        
     }
     
     private func setupView()
     {
+        
+        self.metalView = self.view as! MTKView
         self.metalView.device = MTLCreateSystemDefaultDevice()
         self.metalView.colorPixelFormat = MTLPixelFormat.bgra8Unorm
         self.metalView.clearColor =  MTLClearColorMake(0, 0, 0, 1)
         self.metalView.drawableSize = self.metalView.bounds.size
+        self.metalView.isUserInteractionEnabled = true
         
-        // Create renderer and make it the delegate of our MTKView
-        self.aAPLRenderer = self.aAPLRenderer.instanceWithView(view: self.metalView)
     }
     
     private func swipeMethod()
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         let directions: [UISwipeGestureRecognizerDirection] = [.right, .left, .up, .down]
         for direction in directions {
             let gesture = UISwipeGestureRecognizer(target: self,
-                                   action:#selector(handleSwipe(sender:)))
+                                                   action:#selector(handleSwipe(sender:)))
             
             gesture.direction = direction
             self.view.addGestureRecognizer(gesture)
@@ -71,8 +71,9 @@ class ViewController: UIViewController {
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer)
     {
-        _ = self.aAPLRenderer.instanceWithView(view: self.metalView)
-        
+
+       _ = self.aAPLRenderer.instanceWithView(view: self.metalView)
+     
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -82,5 +83,14 @@ class ViewController: UIViewController {
             let location = touch.location(in: self.view)
             self.activateRandomCellsForPoint(point: location)
         }
+    }
+    
+    @objc func sliderHorizon(_ sender: UISlider)
+    {
+
+        self.aAPLRenderer.screenAnimation =  Int(sender.value)
+        self.setupView()
+        _ = self.aAPLRenderer.instanceWithView(view: self.metalView)
+        
     }
 }

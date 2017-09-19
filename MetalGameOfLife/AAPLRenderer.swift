@@ -92,6 +92,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
                
             ]
         }()
+        
         // Full screen animation from 88
         vetexBuffer = device.makeBuffer(bytes: vertexData,
                                         length: MemoryLayout.size(ofValue: vertexData)*screenAnimation,
@@ -197,7 +198,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         samplerDescriptor.magFilter = MTLSamplerMinMagFilter.nearest
         samplerDescriptor.normalizedCoordinates = true
         samplerState = device.makeSamplerState(descriptor: samplerDescriptor)
-        
+    
     }
     
     //MARK: - Interactivity
@@ -307,5 +308,6 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         self.encodeRenderWorkInBuffer(commandBuffer: commandBuffer!)
         
         commandBuffer?.commit()
+
     }
 }
