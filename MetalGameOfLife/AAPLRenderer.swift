@@ -33,7 +33,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
     var activationPoints : Array<NSValue?> = []
     var inflightSemaphore = DispatchSemaphore(value: 3)
     var nextResizeTimestamp = Date()
-    
+    var screenAnimation = Int()
     func instanceWithView(view:MTKView)->Self
     {
         guard view.device != nil else {
@@ -92,9 +92,9 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
                
             ]
         }()
-
+        // Full screen animation from 88
         vetexBuffer = device.makeBuffer(bytes: vertexData,
-                                        length: MemoryLayout.size(ofValue: vertexData)*11,
+                                        length: MemoryLayout.size(ofValue: vertexData)*screenAnimation,
                                         options: controlPointsBufferOptions)
 
         vetexBuffer.label = "Fullscreen Quad Vertices"
@@ -245,7 +245,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
 
             commandEncoder?.setComputePipelineState(self.activationPipelineState)
             commandEncoder?.setTexture(writeTexture!, index: 0)
-            commandEncoder?.setBytes(cellPositions, length: 88, index: 0)
+            commandEncoder?.setBytes(cellPositions, length: byteCount, index: 0)
 
             commandEncoder?.dispatchThreadgroups(threadgroupCount, threadsPerThreadgroup: threadsPerThreadgroup)
 

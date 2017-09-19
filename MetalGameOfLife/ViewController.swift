@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.aAPLRenderer.screenAnimation = 11
+        
         self.setupView()
         
         self.metalView.isUserInteractionEnabled = true
