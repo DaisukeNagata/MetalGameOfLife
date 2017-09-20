@@ -73,9 +73,8 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
       
         do{
             colorMap = try textureLoader.newTexture(cgImage: colorMapCGImage, options: [:])
-        }catch{
             
-        }
+        }catch{}
 
         colorMap.label = "Color Map"
         var controlPointsBufferOptions = MTLResourceOptions()
@@ -127,6 +126,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         
         do{
             renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+            
         }catch{}
     }
     
