@@ -1,4 +1,4 @@
-# MetalGameOfLife Swift4beta6
+# MetalGameOfLife Xcode9 Swift4
 
 ### Swipe->Retry
 
