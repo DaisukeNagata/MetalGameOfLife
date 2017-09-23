@@ -34,6 +34,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
     var inflightSemaphore = DispatchSemaphore(value: 3)
     var nextResizeTimestamp = Date()
     var screenAnimation = Int()
+    var pointSet = CGPoint()
     func instanceWithView(view:MTKView)->Self
     {
         guard view.device != nil else {
@@ -42,7 +43,6 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         
         mtkView = view
         mtkView.delegate = self
-        
         device = mtkView.device
         library = device.makeDefaultLibrary()
         commandQueue = device.makeCommandQueue()
@@ -62,15 +62,19 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
     func cGImageForImageNamed(imageName:String)->CGImage
     {
         let image = UIImage(named: imageName)
-        return (image?.cgImage)!
+        let imaageView = UIImageView()
+        imaageView.image = image
+        imaageView.frame = self.mtkView.frame
+       
+        return (imaageView.image?.cgImage)!
     }
-    
+
     func buildRenderResources()
     {
         // Use MTKTextureLoader to load a texture we will use to colorize the simulation
         let textureLoader  = MTKTextureLoader.init(device: device)
-        let colorMapCGImage = self.cGImageForImageNamed(imageName: "colormap")
-      
+        let colorMapCGImage = self.cGImageForImageNamed(imageName: "sora")
+        
         do{
             colorMap = try textureLoader.newTexture(cgImage: colorMapCGImage, options: [:])
             
@@ -204,6 +208,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
     //MARK: - Interactivity
     func activateRandomCellsInNeighborhoodOfCell(cell:CGPoint)
     {
+        pointSet = cell
         self.activationPoints.append(NSValue(cgPoint: cell))
     }
     
@@ -216,7 +221,8 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
 
         let commandEncoder = commandBuffer.makeComputeCommandEncoder()
 
-        let threadsPerThreadgroup = MTLSizeMake(16, 16, 1)
+        //Returns the specified size of an object, such as a texture or threadgroup.
+        let threadsPerThreadgroup = MTLSizeMake(3, 3, 1)
         let threadgroupCount = MTLSizeMake((self.gridSize.width/threadsPerThreadgroup.width), (self.gridSize.height/threadsPerThreadgroup.height), 1)
 
         commandEncoder?.setComputePipelineState(self.simulationPipelineState)
@@ -229,10 +235,19 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         if self.activationPoints.count > 0 {
    
             let byteCount = self.activationPoints.count * 2 * MemoryLayout.size(ofValue: 1)
-            let cellPositions  = [byteCount]
+            var cellPositions  = [(byteCount,byteCount)]
+            
+                        for (_, byteCount) in self.activationPoints.enumerated() {
+                
+                                var point = CGPoint()
+                                byteCount?.getValue(&point)
+                
+                            cellPositions = [(Int(point.x),Int(point.y))]
+            
+                        }
             
             let threadsPerThreadgroup = MTLSize(width: self.activationPoints.count,height: 1,depth: 1)
-            let threadgroupCount = MTLSize(width:1,height: 1,depth: 1)
+            let threadgroupCount = MTLSize(width:Int(self.pointSet.x),height: Int(self.pointSet.y),depth: 1)
 
             commandEncoder?.setComputePipelineState(self.activationPipelineState)
             commandEncoder?.setTexture(writeTexture!, index: 0)
