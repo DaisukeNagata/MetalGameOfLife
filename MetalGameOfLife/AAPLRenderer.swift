@@ -62,11 +62,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
     func cGImageForImageNamed(imageName:String)->CGImage
     {
         let image = UIImage(named: imageName)
-        let imaageView = UIImageView()
-        imaageView.image = image
-        imaageView.frame = self.mtkView.frame
-       
-        return (imaageView.image?.cgImage)!
+        return (image?.cgImage)!
     }
 
     func buildRenderResources()
@@ -212,7 +208,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         self.activationPoints.append(NSValue(cgPoint: cell))
     }
     
-    //MARK:mark - Render and Compute Encoding
+    //MARK: - Render and Compute Encoding
     func encodeComputeWorkInBuffer(commandBuffer:MTLCommandBuffer)
     {
 
