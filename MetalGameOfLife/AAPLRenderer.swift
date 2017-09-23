@@ -229,17 +229,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         if self.activationPoints.count > 0 {
    
             let byteCount = self.activationPoints.count * 2 * MemoryLayout.size(ofValue: 1)
-            var cellPositions  = [byteCount,byteCount]
-
-            for (_, value) in self.activationPoints.enumerated() {
-
-                var point = CGPoint()
-                value?.getValue(&point)
-
-                cellPositions[0] = Int(point.x)
-                cellPositions[1] = Int(point.y)
-
-            }
+            let cellPositions  = [byteCount]
             
             let threadsPerThreadgroup = MTLSize(width: self.activationPoints.count,height: 1,depth: 1)
             let threadgroupCount = MTLSize(width:1,height: 1,depth: 1)

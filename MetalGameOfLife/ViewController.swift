@@ -53,6 +53,11 @@ class ViewController: UIViewController {
     
     func locationInGridForLocationInView(point:CGPoint)->CGPoint
     {
+        
+        guard self.aAPLRenderer.gridSize != nil else {
+            return CGPoint(x:0,y:0)
+        }
+        
         let viewSize = self.view.frame.size
         let normalizedWidth = point.x / viewSize.width
         let normalizedHeight = point.y / viewSize.height
