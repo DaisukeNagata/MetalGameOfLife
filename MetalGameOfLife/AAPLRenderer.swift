@@ -54,8 +54,6 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         self.buildComputePipelines()
         self.reshapeWithDrawableSize(drawableSize:mtkView.drawableSize)
         
-	    self.inflightSemaphore = DispatchSemaphore.init(value: kMaxInflightBuffers)
-        
         return self
     }
     

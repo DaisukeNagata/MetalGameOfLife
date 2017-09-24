@@ -11,7 +11,7 @@ import MetalKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var metalView: MTKView!
+    var metalView: MTKView!
     var slider = UISlider()
     var aAPLRenderer = AAPLRenderer()
     
