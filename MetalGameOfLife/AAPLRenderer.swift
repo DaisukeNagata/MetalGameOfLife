@@ -35,6 +35,7 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
     var nextResizeTimestamp = Date()
     var screenAnimation = Int()
     var pointSet = CGPoint()
+    
     func instanceWithView(view:MTKView)->Self
     {
         guard view.device != nil else {
@@ -128,6 +129,37 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         }catch{}
     }
     
+    func buildComputePipelines()
+    {
+        commandQueue = device.makeCommandQueue()
+        
+        let descriptor = MTLComputePipelineDescriptor()
+        descriptor.computeFunction = library.makeFunction(name: "game_of_life")
+        descriptor.label = "Game of Life"
+        do{
+            simulationPipelineState = try device.makeComputePipelineState(descriptor: descriptor,
+                                                                          options: MTLPipelineOption.bufferTypeInfo,
+                                                                          reflection: nil)
+        }catch{}
+        
+        descriptor.computeFunction = library.makeFunction(name: "activate_random_neighbors")
+        descriptor.label = "Activate Random Neighbors"
+        do{
+            activationPipelineState = try device.makeComputePipelineState(descriptor: descriptor,
+                                                                          options: MTLPipelineOption.bufferTypeInfo,
+                                                                          reflection: nil)
+        }catch{}
+        
+        let samplerDescriptor = MTLSamplerDescriptor()
+        samplerDescriptor.sAddressMode = MTLSamplerAddressMode.repeat
+        samplerDescriptor.tAddressMode = MTLSamplerAddressMode.repeat
+        samplerDescriptor.minFilter = MTLSamplerMinMagFilter.nearest
+        samplerDescriptor.magFilter = MTLSamplerMinMagFilter.nearest
+        samplerDescriptor.normalizedCoordinates = true
+        samplerState = device.makeSamplerState(descriptor: samplerDescriptor)
+        
+    }
+    
     func reshapeWithDrawableSize(drawableSize:CGSize)
     {
 
@@ -166,37 +198,6 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
                                      withBytes: randomGrid,
                                      bytesPerRow: gridSize.width)
 
-    }
-    
-    func buildComputePipelines()
-    {
-        commandQueue = device.makeCommandQueue()
-
-        let descriptor = MTLComputePipelineDescriptor()
-        descriptor.computeFunction = library.makeFunction(name: "game_of_life")
-        descriptor.label = "Game of Life"
-        do{
-            simulationPipelineState = try device.makeComputePipelineState(descriptor: descriptor,
-                                                                          options: MTLPipelineOption.bufferTypeInfo,
-                                                                          reflection: nil)
-        }catch{}
-        
-        descriptor.computeFunction = library.makeFunction(name: "activate_random_neighbors")
-        descriptor.label = "Activate Random Neighbors"
-        do{
-            activationPipelineState = try device.makeComputePipelineState(descriptor: descriptor,
-                                                                          options: MTLPipelineOption.bufferTypeInfo,
-                                                                          reflection: nil)
-        }catch{}
-
-        let samplerDescriptor = MTLSamplerDescriptor()
-        samplerDescriptor.sAddressMode = MTLSamplerAddressMode.repeat
-        samplerDescriptor.tAddressMode = MTLSamplerAddressMode.repeat
-        samplerDescriptor.minFilter = MTLSamplerMinMagFilter.nearest
-        samplerDescriptor.magFilter = MTLSamplerMinMagFilter.nearest
-        samplerDescriptor.normalizedCoordinates = true
-        samplerState = device.makeSamplerState(descriptor: samplerDescriptor)
-    
     }
     
     //MARK: - Interactivity
