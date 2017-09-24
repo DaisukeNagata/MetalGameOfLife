@@ -225,8 +225,8 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         
         commandEncoder?.setSamplerState(self.samplerState, index: 0)
         commandEncoder?.dispatchThreadgroups(threadgroupCount, threadsPerThreadgroup: threadsPerThreadgroup)
-        
-        if self.activationPoints.count > 0 {
+
+        if self.activationPoints.count > 0 && Int(self.pointSet.x) != 0 {
    
             let byteCount = self.activationPoints.count * 2 * MemoryLayout.size(ofValue: 1)
             var cellPositions  = [(byteCount,byteCount)]
