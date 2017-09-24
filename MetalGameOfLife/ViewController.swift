@@ -76,9 +76,13 @@ class ViewController: UIViewController {
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer)
     {
-
-       _ = self.aAPLRenderer.instanceWithView(view: self.metalView)
-     
+        
+        guard self.metalView != nil else {
+            return
+        }
+        
+        _ = self.aAPLRenderer.instanceWithView(view: self.metalView)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
