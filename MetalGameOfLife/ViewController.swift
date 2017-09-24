@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.metalView = MTKView()
+        self.view.addSubview(metalView)
+        
         self.swipeMethod()
         self.view.addSubview(slider)
         slider.frame = CGRect(x:0,y:UIScreen.main.bounds.height-100,width:UIScreen.main.bounds.width,height:44)
@@ -30,11 +33,10 @@ class ViewController: UIViewController {
     private func setupView()
     {
         
-        self.metalView = self.view as! MTKView
         self.metalView.device = MTLCreateSystemDefaultDevice()
         self.metalView.colorPixelFormat = MTLPixelFormat.bgra8Unorm
         self.metalView.clearColor =  MTLClearColorMake(0, 0, 0, 1)
-        self.metalView.drawableSize = self.metalView.bounds.size
+        self.metalView.frame = self.view.frame
         self.metalView.isUserInteractionEnabled = true
         
     }
