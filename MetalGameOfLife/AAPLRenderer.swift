@@ -151,8 +151,8 @@ class AAPLRenderer:NSObject,MTKViewDelegate {
         }catch{}
         
         let samplerDescriptor = MTLSamplerDescriptor()
-        samplerDescriptor.sAddressMode = MTLSamplerAddressMode.repeat
-        samplerDescriptor.tAddressMode = MTLSamplerAddressMode.repeat
+        samplerDescriptor.sAddressMode = MTLSamplerAddressMode.clampToZero
+        samplerDescriptor.tAddressMode = MTLSamplerAddressMode.clampToZero
         samplerDescriptor.minFilter = MTLSamplerMinMagFilter.nearest
         samplerDescriptor.magFilter = MTLSamplerMinMagFilter.nearest
         samplerDescriptor.normalizedCoordinates = true
