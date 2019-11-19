@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         slider.frame = CGRect(x:0,y:UIScreen.main.bounds.height-100,width:UIScreen.main.bounds.width,height:44)
         slider.minimumValue = 4
         slider.maximumValue = 11
-        slider.addTarget(self, action: #selector(sliderHorizon(_:)), for: UIControlEvents.touchUpInside)
+        slider.addTarget(self, action: #selector(sliderHorizon(_:)), for: UIControl.Event.touchUpInside)
         
     }
     
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     
     private func swipeMethod()
     {
-        let directions: [UISwipeGestureRecognizerDirection] = [.right, .left, .up, .down]
+        let directions: [UISwipeGestureRecognizer.Direction] = [.right, .left, .up, .down]
         for direction in directions {
             let gesture = UISwipeGestureRecognizer(target: self,
                                                    action:#selector(handleSwipe(sender:)))
