@@ -38,7 +38,7 @@ typedef struct {
     float2 texCoords;
 } FragmentVertex;
 
-vertex FragmentVertex lighting_vertex(device VertexIn *vertexArray [[buffer(0)]],
+vertex FragmentVertex lighting_vertex(const device VertexIn *vertexArray [[buffer(0)]],
                                       uint vertexIndex [[vertex_id]])
 {
     FragmentVertex out;
